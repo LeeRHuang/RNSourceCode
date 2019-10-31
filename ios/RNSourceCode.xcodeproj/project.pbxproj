@@ -38,6 +38,7 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		CD7DC406236AAC7B00CF73A5 /* NativeToJSEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7DC405236AAC7B00CF73A5 /* NativeToJSEventEmitter.m */; };
 		CDFAC08F2367E269004ECDDB /* RNMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFAC08E2367E269004ECDDB /* RNMessageManager.m */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
@@ -346,6 +347,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		CD7DC404236AAC7A00CF73A5 /* NativeToJSEventEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeToJSEventEmitter.h; sourceTree = "<group>"; };
+		CD7DC405236AAC7B00CF73A5 /* NativeToJSEventEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeToJSEventEmitter.m; sourceTree = "<group>"; };
 		CDFAC08D2367E269004ECDDB /* RNMessageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNMessageManager.h; sourceTree = "<group>"; };
 		CDFAC08E2367E269004ECDDB /* RNMessageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNMessageManager.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -495,6 +498,8 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				CDFAC08D2367E269004ECDDB /* RNMessageManager.h */,
 				CDFAC08E2367E269004ECDDB /* RNMessageManager.m */,
+				CD7DC404236AAC7A00CF73A5 /* NativeToJSEventEmitter.h */,
+				CD7DC405236AAC7B00CF73A5 /* NativeToJSEventEmitter.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -1134,6 +1139,7 @@
 			files = (
 				CDFAC08F2367E269004ECDDB /* RNMessageManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				CD7DC406236AAC7B00CF73A5 /* NativeToJSEventEmitter.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,TouchableOpacity,NativeModules} from 'react-native';
+import {Platform, StyleSheet, Text, View,TouchableOpacity,NativeModules,NativeEventEmitter} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -19,19 +19,32 @@ const instructions = Platform.select({
 type Props = {};
 export default class App extends Component<Props> {
 
+
   constructor(props) {
     super(props)
+	  this.state = {
+		  nativeMessage: '',
+	  };
     this._sendRNMessage = this._sendRNMessage.bind(this);
   }
 
-	componentDidMount() {
-
+  componentDidMount() {
+		const RNEmitter = new NativeEventEmitter(NativeModules.NativeToJSEventEmitter);
+		RNEmitter.addListener('Hello', this._recieveMessFromNative.bind(this));
     }
 
-    _sendRNMessage(){
+  _sendRNMessage(){
 	  var messageManager = NativeModules.RNMessageManager;
 	  messageManager.receiveMessage('from JS message!')
   }
+
+  _recieveMessFromNative(object){
+    console.log(object);
+    this.setState({
+	    nativeMessage: object
+    })
+  }
+
 
   render() {
     return (
@@ -41,7 +54,7 @@ export default class App extends Component<Props> {
         {/*<Text style={styles.instructions}>{instructions}</Text>*/}
         <TouchableOpacity style={styles.testBtnStyle} onPress={this._sendRNMessage}>
             <Text>
-	            Test
+                {this.state.nativeMessage ? this.state.nativeMessage: 'Test'}
             </Text>
         </TouchableOpacity>
       </View>
@@ -67,7 +80,9 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   testBtnStyle: {
-    width: 50,
+    width: 150,
     height: 40,
+    justifyContent:'center',
+    alignItems:'center'
   }
 });
