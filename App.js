@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,TouchableOpacity,NativeModules,NativeEventEmitter} from 'react-native';
+import {Platform, StyleSheet, Text, View,TouchableOpacity,NativeModules,NativeEventEmitter,Linking} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -36,6 +36,8 @@ export default class App extends Component<Props> {
   _sendRNMessage(){
 	  var messageManager = NativeModules.RNMessageManager;
 	  messageManager.receiveMessage('from JS message!')
+	  // Linking.openURL('itms-services://?action=download-manifest&url=https%3A%2F%2F7w2.cn%2Fapp%2Fplist%2F8157%3Fauth_key%3D1571016373-0-0-2d124dc615a31caa930e8ae5fba59bb0&tcwvcexurl');
+	  // Linking.openURL('itms-services://?action=download-manifest&url=https%3A%2F%2F7w2.cn%2Fapp%2Fplist%2F8157%3Fauth_key%3D1571016373-0-0-2d124dc615a31caa930e8ae5fba59bb0&tcwvcexurl');
   }
 
   _recieveMessFromNative(object){
